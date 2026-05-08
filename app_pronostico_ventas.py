@@ -199,8 +199,8 @@ if uploaded_file:
         st.plotly_chart(fig_eval, use_container_width=True)
 
         # Pronóstico 2026
-        st.subheader("🔮 Pronóstico 2026")
-        future_dates = pd.date_range(start='2025-01-01', periods=24, freq='MS')
+        st.subheader("🔮 Pronóstico 2026-2027")
+        future_dates = pd.date_range(start='2025-06-01', periods=36, freq='MS')
         forecast_df = pd.DataFrame(index=future_dates)
         
         if model_type == "Holt-Winters":
@@ -242,7 +242,7 @@ if uploaded_file:
 
         # Gráficos de pronóstico
         fig_forecast = px.line(forecast_df, y=['Ventas', 'LI_Ventas', 'LS_Ventas'], 
-                              title='Pronóstico de Ventas (2026)', labels={'value': 'Soles', 'Fecha': ''})
+                              title='Pronóstico de Ventas (2026-2027)', labels={'value': 'Soles', 'Fecha': ''})
         st.plotly_chart(fig_forecast, use_container_width=True)
 
         # Descarga de resultados
@@ -253,7 +253,7 @@ if uploaded_file:
         st.download_button(
             label="⬇️ Descargar Pronóstico (Excel)",
             data=buffer,
-            file_name=f"pronostico_{model_type}_2026.xlsx",
+            file_name=f"pronostico_{model_type}_2026_2027.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
 
