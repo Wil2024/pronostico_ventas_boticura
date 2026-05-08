@@ -15,7 +15,7 @@ warnings.filterwarnings('ignore')
 
 # Configuración inicial de Streamlit
 st.set_page_config(page_title="Simulador de Pronóstico de Ventas", layout="wide")
-st.title("🔮 Simulador de Pronóstico de Ventas 🔮")
+st.title("🔮 Simulador de Pronóstico de Ventas BotiCura🔮")
 st.markdown("""
 Bienvenido al simulador de forecasting. Esta herramienta permite pronosticar ventas en soles, evaluar modelos y tomar decisiones estratégicas.  
 """)
