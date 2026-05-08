@@ -62,7 +62,7 @@ if uploaded_file:
         data = pd.read_excel(uploaded_file, parse_dates=['Fecha'])
         data['Fecha'] = pd.to_datetime(data['Fecha'])
         data.sort_values('Fecha', inplace=True)
-        data.fillna(method='ffill', inplace=True)
+        data.fillna(inplace=True)
 
         # Validación de columnas esenciales
         columnas_requeridas = ['Fecha', 'Departamento', 'Distrito', 'Canal_Venta', 'Ventas', 'Festivo', 'Eventos']
