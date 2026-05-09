@@ -416,7 +416,7 @@ with tab1:
 
     # YoY por año
     st.markdown('<p class="section-title">📈 Crecimiento Año a Año (YoY)</p>', unsafe_allow_html=True)
-    ventas_anual = ts_mensual["Ventas"].resample("A").sum().reset_index()
+    ventas_anual = ts_mensual["Ventas"].resample("YE").sum().reset_index()
     ventas_anual.columns = ["Fecha", "Ventas"]
     ventas_anual["Año"] = pd.to_datetime(ventas_anual["Fecha"]).dt.year
     ventas_anual["YoY (%)"] = ventas_anual["Ventas"].pct_change() * 100
